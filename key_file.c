@@ -78,6 +78,7 @@ int read_key_file(Key_file* obj)
 		}
 		//fprintf(stderr, "%d\n", ++count); //debug
 	}
+	fclose(fPtr);
 	return 0;
 }
 

@@ -12,13 +12,16 @@ int main(int argc, char *argv[])
 	Key_file* obj = new_Key_file( path );
 
 	int i = 0;
-	for(i = 0; i<1; ++i)
+	for(i = 0; i<2; ++i)
 	{
 		Key_file obj2 = { ._key_file_path=path, ._target="hello", ._password="abc" };
 		write_key_file(&obj2);
 		read_key_file(obj);
-	for(i = 0; i<MAX_PASSWORD_SIZE; ++i)
-		if(obj->_password[i]!=obj2._password[i]) fprintf(stderr, "fail\n");
+		int j = 0;
+		for(j = 0; j<MAX_PASSWORD_SIZE; ++j) {
+			char c1 = obj->_password[j], c2 = obj2._password[j];
+			if(c1!=c2) fprintf(stderr, "fail\n");
+		}
 	}
 	delete_Key_file(obj);
 	return 0;
