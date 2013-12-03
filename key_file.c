@@ -71,7 +71,7 @@ int read_key_file(Key_file* obj)
 		}
 		else if(strcmp(line, PASSWORD)==0) {
 			int i = 0;
-			for(i=0; i<12; ++i) {
+			for(i=0; i<MAX_PASSWORD_SIZE; ++i) {
 				fscanf(fPtr, "%i", (unsigned int*)(password+i));
 				//fprintf(stderr, "%02X", password[i]); //debug
 			}

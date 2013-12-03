@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
 {
 	printf("helloworld is running !!! \n");
 
-	char path[] = "/home/bokai/key_file/testfile";
+	char path[] = "/tmp/testfile";
 
 	Key_file* obj = new_Key_file( path );
 
