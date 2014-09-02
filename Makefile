@@ -3,7 +3,7 @@ CC=gcc
 CFLAGS=-I$(IDIR) -Wall -g
 #CFLAGS+= `pkg-config --cflags --libs glib-2.0`  -lgcrypt
 
-ODIR=obj
+ODIR=.
 LDIR =./lib
 
 _DEPS = key_file.h my_crypto.h
@@ -23,4 +23,4 @@ $(ODIR)/%.o: %.c $(DEPS)
 .PHONY: clean
 
 clean:
-	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ $(target)
+	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ $(target) /tmp/testfile

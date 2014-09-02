@@ -22,6 +22,7 @@ int main(int argc, char *argv[])
 			char c1 = obj->_password[j], c2 = obj2._password[j];
 			if(c1!=c2) fprintf(stderr, "fail\n");
 		}
+		fprintf(stderr, "write and read successfully. compare matched!!\n");
 	}
 	delete_Key_file(obj);
 	return 0;
